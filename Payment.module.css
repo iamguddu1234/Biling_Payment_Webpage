@@ -1,0 +1,211 @@
+html {
+  /*Core color codes------global color codes #224C98 */
+  --themeColor: #207ef5; /* #224C98;/*#263c63;/* #1b3d7a;#4285F4*/
+  --deepDarkThemeTextColor: #1b1e24; /*#29303d;/*#132545;/*#0e1c36;*/
+  --greyTextColor: #5e5d5d;
+  --cardBorderColor: #d3d3d3;
+  --cardBorderColorLight: #e8e8e8;
+  --greenColor1: #65c394;
+  --redColor1: #ff726f;
+  --chatCommentBkgColor: #e3effe;
+  --bodyBkgColor: #f2f2f2;
+}
+
+.paymentParent {
+  width: 100%;
+  height: auto;
+  background-color: var(--bodyBkgColor);
+  margin-bottom: 50px;
+}
+
+.topContainer {
+
+  width: 70%;
+  padding: 10px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.billingTitle {
+  font-weight: 500;
+}
+
+.setCourseFeeBtn {
+  height: 20px;
+  padding: 5px;
+  color: var(--themeColor);
+  background-color: white;
+  border: 1px solid var(--themeColor);
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.subPayment {
+}
+.boxContainer {
+  width: 70%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box1 {
+  width: 33.3%;
+  height: 100px;
+  background-color: white;
+  border: 1px solid var(--cardBorderColor);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxTitle1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--greyTextColor);
+  font-size: 14px;
+}
+
+.box1Amount {
+  font-size: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.box2 {
+  margin: 10px;
+  width: 33.3%;
+  height: 100px;
+  background-color: white;
+  border: 1px solid var(--cardBorderColor);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxTitle2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--greyTextColor);
+  font-size: 14px;
+}
+
+.box2Amount {
+  font-size: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.box3 {
+  width: 33.3%;
+  height: 100px;
+  background-color: white;
+  border: 1px solid var(--cardBorderColor);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxTitle3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--greyTextColor);
+  font-size: 14px;
+}
+
+.box3Amount {
+  font-size: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.mainDetailsContainer {
+}
+
+.paymetDetailsSummary {
+  margin: 10px;
+  height: 35px;
+  width: 70%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--cardBorderColor);
+
+}
+
+.StudText {
+  width: 25%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: var(--greyTextColor);
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.TotalText {
+  width: 15%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: var(--greyTextColor);
+  font-size: 16px;
+}
+
+.DueText {
+  width: 15%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: var(--greyTextColor);
+  font-size: 16px;
+}
+
+.PaidText {
+  width: 15%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: var(--greyTextColor);
+  font-size: 16px;
+}
+
+.horiLine {
+  margin: 10px;
+  width: 70%;
+  border-bottom: 1px solid;
+  border-bottom-color: var(--cardBorderColorLight);
+}
+
+.studentDetails {
+  margin: 10px;
+  width: 70%;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid var(--cardBorderColor);
+}
