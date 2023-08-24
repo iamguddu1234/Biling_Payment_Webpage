@@ -16,11 +16,14 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   width: auto;
 }
 
 .studentSectionMainContainer{
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,6 +61,36 @@ html {
   align-items: center;
 }
 
+.PaidDate{
+  width: 15%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.editBtn{
+  height: 25px;
+  width: 25px;
+  padding: 2px;
+  border-radius: 50%;
+  color: var(--greyTextColor);
+  background-color: var(--cardBorderColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+
+.editBtn:hover{
+  cursor: pointer;
+  background-color: var(--themeColor);
+  color: white;
+}
+
+.studentSectionMainContainer:hover .editBtn{
+  visibility: visible;
+}
 .pic {
   height: 35px;
   width: 35px;
@@ -72,4 +105,52 @@ html {
     width: 100%;
     border-bottom: 1px solid;
     border-bottom-color: var(--cardBorderColorLight);
+}
+
+
+@media (max-width: 800px) {
+
+
+  .profileContainer {
+    width: 25%;
+    font-size: 14px;
+   
+  }
+  
+  .total {
+    width: 15%;
+ font-size: 14px;
+  }
+  
+  .Due {
+    width: 15%;
+ font-size: 14px;
+ display: flex;
+ justify-content: end;
+ align-items: center;
+  }
+  .Paid {
+    width: 15%;
+  font-size: 14px;
+  }
+  
+  .PaidDate{
+    width: 15%;
+  font-size: 14px;
+  }
+  
+  .editBtn{
+    height: 25px;
+    width: 25px;
+    padding: 2px;
+    border-radius: 50%;
+    color: var(--greyTextColor);
+    background-color: var(--cardBorderColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+  }
+
+
 }
