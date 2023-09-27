@@ -14,6 +14,10 @@ html {
 .parentPaymentHistoryMain {
 }
 
+.parentPaymentHistoryMain:hover {
+  background-color: var(--cardBorderColorLight);
+}
+
 .parentPaymentHistory {
   width: 100%;
   height: 30px;
@@ -22,8 +26,17 @@ html {
   align-items: center;
 }
 
+.srNo {
+  width: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: var(--deepDarkThemeTextColor);
+}
+
 .Date {
-  width: 20%;
+  width: 13%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +45,7 @@ html {
 }
 
 .Amount {
-  width: 20%;
+  width: 14%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +54,7 @@ html {
 }
 
 .Invoice {
-  width: 20%;
+  width: 14%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,8 +63,12 @@ html {
   text-decoration: underline;
 }
 
+.Invoice:hover {
+  cursor: pointer;
+}
+
 .PaymnetMethod {
-  width: 20%;
+  width: 14%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,8 +76,26 @@ html {
   color: var(--deepDarkThemeTextColor);
 }
 
+.Credit {
+  font-size: 14px;
+
+  width: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Debit {
+  font-size: 14px;
+
+  width: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Status {
-  width: 20%;
+  width: 14%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,4 +106,34 @@ html {
 .horizontalLine {
   width: 100%;
   border-bottom: 1px solid var(--cardBorderColorLight);
+}
+
+@media (max-width: 800px) {
+  .srNo{
+    font-size: 10px;
+  }
+  .Date {
+    font-size: 9px;
+  }
+  .Amount {
+    font-size: 10px;
+  }
+
+  .PaymnetMethod {
+    font-size: 10px;
+    text-wrap: nowrap;
+  }
+  .Credit {
+    font-size: 10px;
+  }
+
+  .Debit {
+    font-size: 10px;
+  }
+  .Status {
+    font-size: 10px;
+  }
+  .Invoice {
+    font-size: 10px;
+  }
 }

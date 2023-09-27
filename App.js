@@ -7,12 +7,53 @@ import img2 from "./c2.png";
 import img3 from "./c3.png";
 import img4 from "./c4.png";
 import Payment from "./PaymentHistory";
+import qr from "./qrImg.jpg";
+import { useState } from "react";
+import AppPaymentCard from "./AppPaymentDetailsCard";
+import CreditDebitCard from "./CreditDebitCard";
+import TopCard from "./TopCard";
 
 function App() {
+  const [showQrForm, setQrForm] = useState(false);
+  const showQrFormHandler = () => {
+    setQrForm(true);
+    setUpiForm(false);
+    setNetBankingForm(false);
+    setCardFrom(false);
+  };
+
+  const [showUpiForm, setUpiForm] = useState(false);
+  const showUpiFormHandler = () => {
+    setQrForm(false);
+    setUpiForm(true);
+    setNetBankingForm(false);
+    setCardFrom(false);
+  };
+
+  const [showNetBanking, setNetBankingForm] = useState(false);
+  const showNetBankingHandler = () => {
+    setNetBankingForm(true);
+    setQrForm(false);
+    setUpiForm(false);
+    setCardFrom(false);
+  };
+
+  const [showCardForm, setCardFrom] = useState(true);
+  const showCardFormHandler = () => {
+    setCardFrom(true);
+    setNetBankingForm(false);
+    setQrForm(false);
+    setUpiForm(false);
+  };
+
   return (
     <div className={classes.parentBillingContainer}>
       <div className={classes.leftContainer}>
         <div className={classes.MainHeading}>Subscribe To DiracAI</div>
+
+        <div className={classes.topcardParent}>
+          <TopCard />
+        </div>
         <div className={classes.MainHeading2}>Billings Plans : </div>
 
         <div className={classes.topParent}>
@@ -22,11 +63,7 @@ function App() {
             <div className={classes.moneyContainer}>
               <div className={classes.billedPrice}>$ 100</div>
 
-              <input
-                type="radio"
-                className={classes.YearlyRadioBtn}
-                checked
-              />
+              <input type="radio" className={classes.YearlyRadioBtn} unchecked />
             </div>
             <div className={classes.taxDetails}>
               CGST & SGST Include In Amount
@@ -60,55 +97,155 @@ function App() {
           </div>
         </div>
 
+        <div className={classes.Line}></div>
+
         <div className={classes.PaymentDetails}>
           <div className={classes.paymentTitle}>Payment Details</div>
 
           <div className={classes.navigationBar}>
             <div className={classes.navigationMenu}>
-              <div className={classes.netBanking}>Net Banking</div>
-              <div className={classes.card}>Card</div>
-              <div className={classes.Upi}>UPI</div>
-              <div className={classes.qr}>QR Code</div>
+              <button
+                onClick={showNetBankingHandler}
+                className={classes.netBanking}
+              >
+                Net Banking
+              </button>
+
+              <button onClick={showCardFormHandler} className={classes.card}>
+                Card
+              </button>
+
+              <button onClick={showUpiFormHandler} className={classes.Upi}>
+                UPI
+              </button>
+
+              <button onClick={showQrFormHandler} className={classes.qr}>
+                QR Code
+              </button>
             </div>
           </div>
 
-          <div className={classes.cardPayment}>
-            <div className={classes.cardPaymentMainContainer}>
-              <div className={classes.cardNumberContainer}>
-                <div className={classes.CardText}>Card Number :</div>
-                <input className={classes.cardNumberEditBox} type="text" />
-              </div>
-
-              <div className={classes.horizontalContainer}>
-                <div className={classes.expiryContainer}>
-                  <div className={classes.ExpiryText}>Expiration Date :</div>
-                  <input className={classes.ExpirationEditBox} type="text" />
+          {showCardForm && (
+            <div className={classes.cardPayment}>
+              <div className={classes.cardPaymentMainContainer}>
+                <div className={classes.cardNumberContainer}>
+                  <div className={classes.CardText}>Card Number :</div>
+                  <input className={classes.cardNumberEditBox} type="text" />
                 </div>
 
-                <div className={classes.cvvContainer}>
-                  <div className={classes.textCvv}>CVV :</div>
+                <div className={classes.horizontalContainer}>
+                  <div className={classes.expiryContainer}>
+                    <div className={classes.ExpiryText}>Expiration Date :</div>
+                    <input className={classes.ExpirationEditBox} type="text" />
+                  </div>
 
-                  <input className={classes.cvvEditBox} type="text" />
+                  <div className={classes.cvvContainer}>
+                    <div className={classes.textCvv}>CVV :</div>
+
+                    <input className={classes.cvvEditBox} type="text" />
+                  </div>
                 </div>
-              </div>
 
-              <div className={classes.submitBtn}>Subscribe</div>
+                <div className={classes.submitBtn}>Subscribe</div>
+              </div>
             </div>
-          </div>
+          )}
+
+          {showQrForm && (
+            <div className={classes.qrForm}>
+              <div className={classes.qrMaincontainer}>
+                <img className={classes.qrCodeImage} src={qr}></img>
+              </div>
+            </div>
+          )}
+
+          {showUpiForm && (
+            <div className={classes.upiForm}>
+              <div className={classes.upiPaymentMainContainer}>
+                <div className={classes.UpiContainer}>
+                  <div className={classes.UpiText}>UPI Id :</div>
+                  <input className={classes.upiNumberEditBox} type="text" />
+                </div>
+
+                <div className={classes.upipayBtnBtn}>Pay</div>
+              </div>
+            </div>
+          )}
+
+          {showNetBanking && (
+            <div className={classes.netBanking1}>
+              <div className={classes.selectBank}>Select Bank :</div>
+
+              <div className={classes.horiLine2}></div>
+
+              <div className={classes.firstContainer}>
+                <input
+                  type="radio"
+                  className={classes.YearlyRadioBtn}
+                  checked
+                />
+                <div className={classes.hdfcBank}>HDFC Bank</div>
+              </div>
+
+              <div className={classes.secoundContainer}>
+                <input
+                  type="radio"
+                  className={classes.YearlyRadioBtn}
+                  checked
+                />
+
+                <div className={classes.IcBank}>ICICI Bank</div>
+              </div>
+
+              <div className={classes.thirdContainer}>
+                <input
+                  type="radio"
+                  className={classes.YearlyRadioBtn}
+                  checked
+                />
+
+                <div className={classes.axBank}>AXIS Bank</div>
+              </div>
+
+              <div className={classes.fourContainer}>
+                <input
+                  type="radio"
+                  className={classes.YearlyRadioBtn}
+                  checked
+                />
+
+                <div className={classes.sbiBank}>SBI Bank</div>
+              </div>
+
+              <div className={classes.fifthContainer}>
+                <input
+                  type="radio"
+                  className={classes.YearlyRadioBtn}
+                  checked
+                />
+
+                <div className={classes.kotakBank}>Kotak Bank</div>
+              </div>
+            </div>
+          )}
 
           <div className={classes.horizontalLine}></div>
 
+          <div className={classes.paymentHistoryTitle}>Payment History :</div>
+
           <div className={classes.paymentHistoryDetails}>
             <div className={classes.paymentContainer}>
+              <div className={classes.srNo}>#</div>
+
               <div className={classes.Date}>Date</div>
 
-              <div className={classes.Amount}>Amount</div>
+              <div className={classes.Amount}>Description</div>
 
-              <div className={classes.Invoice}>Invoice</div>
-
-              <div className={classes.PaymnetMethod}>Payment Mehthod</div>
+              <div className={classes.Credit}>Credit</div>
+              <div className={classes.Debit}>Debit</div>
 
               <div className={classes.Status}>Status</div>
+              <div className={classes.Invoice}>Invoice</div>
             </div>
 
             <Payment />
@@ -119,16 +256,23 @@ function App() {
             <Payment />
             <Payment />
             <Payment />
+          </div>
+
+          <div className={classes.creditDetailsCard}>
+            <CreditDebitCard />
+          </div>
+
+          <div className={classes.appCardContainer}>
+            <AppPaymentCard />
           </div>
         </div>
       </div>
 
       <div className={classes.rightContainer}>
-        <div className={classes.title}>Unlimited</div>
-
-        <div className={classes.horiLine}></div>
-
         <div className={classes.featuresContainer}>
+          <div className={classes.title}>Unlimited</div>
+
+          <div className={classes.horiLine}></div>
           <div className={classes.f1Container}>
             <MdDone className={classes.img} />
             <div className={classes.heading}>Unlimited</div>
